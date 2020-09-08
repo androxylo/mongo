@@ -84,7 +84,7 @@ auto makeTaskExecutor(ServiceContext* /*serviceContext*/) {
         std::make_unique<ThreadPool>(tpOptions), executor::makeNetworkInterface("FreeMonNet"));
 }
 
-class FreeMonNetworkHttp : public FreeMonNetworkInterface {
+class FreeMonNetworkHttp final : public FreeMonNetworkInterface {
 public:
     explicit FreeMonNetworkHttp(ServiceContext* serviceContext) {
         _executor = makeTaskExecutor(serviceContext);

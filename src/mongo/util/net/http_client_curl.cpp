@@ -200,7 +200,7 @@ struct CurlSlistFreeAll {
 };
 using CurlSlist = std::unique_ptr<curl_slist, CurlSlistFreeAll>;
 
-class CurlHttpClient : public HttpClient {
+class CurlHttpClient final : public HttpClient {
 public:
     CurlHttpClient() {
         // Initialize a base handle with common settings.

@@ -170,7 +170,7 @@ public:
         // Sort the command names before building the result BSON.
         std::vector<std::string> commandNames;
         const auto commandRegistry = globalCommandRegistry();
-        for (const auto command : commandRegistry->allCommands()) {
+        for (const auto& command : commandRegistry->allCommands()) {
             // Don't show oldnames unless it's "isMaster". The output of the listCommands command
             // must include "isMaster," even though it's an alias for the "hello" command, in order
             // to preserve backwards compatibility with Ops Manager 4.4.
